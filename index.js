@@ -6,6 +6,7 @@ const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
   ],
+  allowedMentions: { repliedUser: false },
 });
 
 client.once('ready', () => {
@@ -20,12 +21,11 @@ client.on('messageCreate', (message) => {
   if (content === '!help') {
     const embed = new EmbedBuilder()
       .setColor(0x5865f2)
-      .setTitle('📖 Danh sách lệnh')
-      .setDescription('Dưới đây là các lệnh bạn có thể sử dụng:')
+      .setTitle('📖 Hướng dẫn - CCVC')
       .addFields(
-        { name: '🏓 !ping', value: 'Kiểm tra độ trễ của bot' },
+        { name: '🏓 .cauca', value: 'abc' },
       )
-      .setFooter({ text: 'Powered by discord.js' })
+      .setFooter({ text: 'Bản Beta 1.0.0' })
       .setTimestamp();
 
     message.reply({ embeds: [embed] });
